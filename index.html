@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desencriptar AES | JSON</title>
+
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1990/1990454.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>   
+    <link href="https://unpkg.com/jsoneditor@5.32.5/dist/jsoneditor.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/jsoneditor@5.32.5/dist/jsoneditor.min.js"></script>
+</head>
+
+<body>
+    <div class="grid gap-4 grid-cols-4 p-3">
+        <div class="col">
+            <div class="flex items-center gap-2">
+                <h1 class="font-bold">Sesiones</h1>
+                <div class="flex justify-between w-full">
+                    <button id="btn-recargar-sesiones" type="button" class="p-1 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100"><box-icon name='sync'></box-icon></button>
+                    <!-- <button id="btn-clear" type="button" class="p-1 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100"><box-icon name='trash'></box-icon></button> -->
+                </div>
+            </div>
+            <div id="div-sesiones" class="mt-2">
+            </div>
+        </div>
+        <div class="col-span-3">
+            <div class="flex items-center gap-2 justify-between">
+                <div class="flex gap-2">
+                    <button id="btn-guardar-clave" title="Guardar Clave" type="button" class="p-1 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100"><box-icon name='key'></box-icon></button>
+                    <h1 class="font-bold text-2xl">Desencriptar AES JSON | DBAES</h1>
+                </div>
+                
+                
+                <button id="btn-guardar-sesion" title="Guardar Sesion" type="button" class="p-1 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100"><box-icon name='save'></box-icon></button>
+            </div>
+           <div>
+            <div id="decrypt-form" class="mt-4 mb-4">
+                <div class="grid">
+                    <div class="col flex flex-col">
+                        <label for="encryptedMessage">Mensaje encriptado:</label>
+                        <textarea class="border" id="txt-mensaje-encriptado" rows="5" required></textarea>
+                    </div>
+                    <div class="col mt-4">
+                        <button id="btn-desencriptar" class="bg-blue-600 text-white font-medium hover:bg-blue-500 p-2 rounded w-full">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="div-json-editor" style="height: 400px;"></div>
+           </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+
+</html>
